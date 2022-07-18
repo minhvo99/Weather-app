@@ -1,0 +1,33 @@
+<section class="container">
+  <div class="search-form">
+    <div class="form-group">
+      <label for=""></label>
+      <input
+        type="text"
+        class="form-control"
+        #query
+        aria-describedby="helpId"
+        placeholder="Search..."
+      />
+      <button
+        class="btn btn-primary btn-large"
+        (click)="getWeather(query.value)"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3" >
+      <div class="card-deck">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Country: {{ resultSearch?.location?.country}}</h4>
+            <p class="card-text">City: {{ resultSearch?.location?.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pre>{{resultSearch | json}}</pre>
+  </div>
+</section>
